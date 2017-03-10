@@ -1,3 +1,39 @@
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = https://github.com/vim-scripts/L9
+[submodule "bundle/emmet"]
+	path = bundle/emmet
+	url = https://github.com/mattn/emmet-vim
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/haml"]
+	path = bundle/haml
+	url = https://github.com/tpope/vim-haml
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "bundle/javascript-lib"]
+	path = bundle/javascript-lib
+	url = https://github.com/crusoexia/vim-javascript-lib
+[submodule "bundle/multiple-cursors"]
+	path = bundle/multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "bundle/lightline"]
+	path = bundle/lightline
+	url = https://github.com/itchyny/lightline.vim
+[submodule "bundle/commentary"]
+	path = bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "bundle/css3-syntax"]
+	path = bundle/css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/monokai"]
+	path = bundle/monokai
+	url = https://github.com/crusoexia/vim-monokai
