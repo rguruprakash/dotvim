@@ -37,6 +37,3 @@
 [submodule "bundle/monokai"]
 	path = bundle/monokai
 	url = https://github.com/crusoexia/vim-monokai
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
