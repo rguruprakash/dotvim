@@ -43,8 +43,8 @@ let mapleader=","
 " My shortcuts
 nmap - :vert resize -5<cr>
 nmap = :vert resize +5<cr>
-nmap [ :tabm -1<cr>
-nmap ] :tabm +1<cr>
+nmap 9 :tabm -1<cr>
+nmap 0 :tabm +1<cr>
 " nmap t :tabf 
 " nmap s :vert sf 
 nmap _ :NERDTreeToggle<cr>
