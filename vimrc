@@ -51,6 +51,12 @@ set nobackup
 set clipboard=unnamed
 let mapleader=","
 
+" Dependencies
+" brew install fzf
+" brew install the_silver_searcher
+" fzf
+set rtp+=/usr/local/opt/fzf
+
 " My shortcuts
 nmap - :vert resize -5<cr>
 nmap = :vert resize +5<cr>
