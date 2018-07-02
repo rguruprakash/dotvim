@@ -10,3 +10,7 @@ git submodule init
 git submodule update
 ```
 Thanks to http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+
+# Useful links
+
+* Delete Git submodule - https://gist.github.com/myusuf3/7f645819ded92bda6677
