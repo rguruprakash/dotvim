@@ -4,8 +4,8 @@ filetype plugin indent on
 syntax on
 let g:solarized_termcolors=256
 set background=dark
-" colorscheme solarized
-colorscheme monokai
+colorscheme solarized
+" colorscheme monokai
 
 " Code Folding
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend

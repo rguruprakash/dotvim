@@ -28,9 +28,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/monokai"]
-	path = bundle/monokai
-	url = https://github.com/crusoexia/vim-monokai
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
