@@ -1,7 +1,6 @@
 # Installation
 
 ```
-cd ~
 git clone http://github.com/rguruprakash/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 vim +'PlugInstall --sync'
