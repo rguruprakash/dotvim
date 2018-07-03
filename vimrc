@@ -2,10 +2,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax on
-let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-" colorscheme monokai
 
 " Code Folding
 syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
@@ -16,7 +14,6 @@ autocmd FileType css setlocal foldmethod=indent
 
 " airline
 set laststatus=2
-let g:airline_powerline_fonts=1
 
 set rnu
 set number
