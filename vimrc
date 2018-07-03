@@ -1,5 +1,23 @@
-execute pathogen#infect()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-scripts/L9'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-haml'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier'
+
+call plug#end()
 
 syntax on
 set background=dark
@@ -27,7 +45,7 @@ augroup code_folding
     au FileType html setlocal foldmethod=manual
     au FileType scss setlocal foldmethod=indent
     au FileType css setlocal foldmethod=indent
-augroup END 
+augroup END
 
 " --------------
 " PLUGINS CONFIG
