@@ -5,16 +5,6 @@ syntax on
 set background=dark
 colorscheme solarized
 
-" Code Folding
-syntax region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-autocmd FileType js setlocal foldmethod=syntax
-autocmd FileType html setlocal foldmethod=manual
-autocmd FileType scss setlocal foldmethod=indent
-autocmd FileType css setlocal foldmethod=indent
-
-" airline
-set laststatus=2
-
 set rnu
 set number
 set autoindent
@@ -25,15 +15,36 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set smarttab
-" set path=$PWD/**
 set nobackup
 set clipboard=unnamed
 let mapleader=","
 
+" Code folding
+set foldlevel=99 " unfold everything initially
+augroup code_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+    au FileType html setlocal foldmethod=manual
+    au FileType scss setlocal foldmethod=indent
+    au FileType css setlocal foldmethod=indent
+augroup END 
+
+" --------------
+" PLUGINS CONFIG
+" --------------
+
+" vim-javascript - for syntax highlighting
+let g:javascript_plugin_jsdoc=1 " syntax highlighting jsdocs
+let g:javascript_plugin_ngdoc=1 " syntax highlighting ngdocs
+let g:javascript_plugin_flow=1 " syntax highlighting flow (https://flow.org/)
+
+" airline
+set laststatus=2
+
+" fzf - for search all and ctrlp feature
 " Dependencies
 " brew install fzf
 " brew install the_silver_searcher
-" fzf
 set rtp+=/usr/local/opt/fzf
 
 " My shortcuts
