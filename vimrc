@@ -38,6 +38,13 @@ set clipboard=unnamed
 let mapleader=","
 
 " Code folding
+function! CustomFoldText()
+    return substitute(getline(v:foldstart), "$", " ...", "g")
+endfunction
+
+set foldtext=CustomFoldText()
+hi Folded cterm=bold ctermfg=13 ctermbg=8 guifg=DarkMagenta
+set fillchars=fold:\  
 set foldlevel=99 " unfold everything initially
 augroup code_folding
     au!
@@ -73,3 +80,5 @@ nmap + :tabm +1<cr>
 nmap _ :NERDTreeToggle<cr>
 nmap <C-p> :Files<cr>
 nmap <C-f> :Ag<cr>
+nmap <C-F> :Filetypes<cr>
+nmap <leader>r :source ~/.vimrc<cr>
