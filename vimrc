@@ -34,7 +34,7 @@ set shiftwidth=4
 set shiftround
 set smarttab
 set nobackup
-set clipboard=unnamed
+set nowritebackup
 let mapleader=","
 
 " Code folding
@@ -49,6 +49,7 @@ set foldlevel=99 " unfold everything initially
 augroup code_folding
     au!
     au FileType javascript setlocal foldmethod=syntax
+    au FileType json setlocal foldmethod=syntax
     au FileType html setlocal foldmethod=manual
     au FileType scss setlocal foldmethod=indent
     au FileType css setlocal foldmethod=indent
