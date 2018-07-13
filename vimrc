@@ -81,5 +81,7 @@ nmap + :tabm +1<cr>
 nmap _ :NERDTreeToggle<cr>
 nmap <C-p> :Files<cr>
 nmap <C-f> :Ag<cr>
-nmap <C-F> :Filetypes<cr>
+nmap <leader>f :Filetypes<cr>
 nmap <leader>r :source ~/.vimrc<cr>
+nmap <leader>c :Gcommit<cr>
+nmap <leader>d :Gdiff<cr>
