@@ -78,7 +78,8 @@ nmap - :vert resize -5<cr>
 nmap = :vert resize +5<cr>
 nmap _ :tabm -1<cr>
 nmap + :tabm +1<cr>
-nmap _ :NERDTreeFind<cr>
+nmap _ :NERDTreeToggle<cr>
+nmap <leader>- :NERDTreeFind<cr>
 nmap <C-p> :Files<cr>
 nmap <C-f> :Ag<cr>
 nmap <leader>f :Filetypes<cr>
