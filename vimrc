@@ -16,6 +16,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier'
+Plug 'leafgarland/typescript-vim'
+Plug 'mkitt/tabline.vim'
 
 call plug#end()
 
@@ -49,11 +51,18 @@ set foldlevel=99 " unfold everything initially
 augroup code_folding
     au!
     au FileType javascript setlocal foldmethod=syntax
+    au FileType typescript setlocal foldmethod=syntax
     au FileType json setlocal foldmethod=syntax
     au FileType html setlocal foldmethod=manual
     au FileType scss setlocal foldmethod=indent
     au FileType css setlocal foldmethod=indent
 augroup END
+
+" Tabline
+set showtabline=2
+hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 " --------------
 " PLUGINS CONFIG
