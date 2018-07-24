@@ -37,6 +37,7 @@ set shiftround
 set smarttab
 set nobackup
 set nowritebackup
+set clipboard=unnamed " share clipboard
 let mapleader=","
 
 " Code folding
