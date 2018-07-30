@@ -6,24 +6,23 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-haml'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
-Plug 'hail2u/vim-css3-syntax'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'ervandew/supertab'
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier'
-Plug 'leafgarland/typescript-vim'
 Plug 'mkitt/tabline.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme base16-ocean
 
 set rnu
 set number
@@ -46,7 +45,6 @@ function! CustomFoldText()
 endfunction
 
 set foldtext=CustomFoldText()
-hi Folded cterm=bold ctermfg=13 ctermbg=8 guifg=DarkMagenta
 set fillchars=fold:\  
 set foldlevel=99 " unfold everything initially
 augroup code_folding
@@ -61,9 +59,6 @@ augroup END
 
 " Tabline
 set showtabline=2
-hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
 
 " --------------
 " PLUGINS CONFIG
