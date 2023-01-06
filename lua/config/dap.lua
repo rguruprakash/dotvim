@@ -1,19 +1,21 @@
 local M = {}
 
 function M.setup(use)
-  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" },
+  use({
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
     config = function()
       require("dapui").setup()
 
-      local dap = require 'dap';
+      local dap = require("dap")
 
       dap.adapters.delve = {
-        type = 'server',
-        port = '${port}',
+        type = "server",
+        port = "${port}",
         executable = {
-          command = 'dlv',
-          args = { 'dap', '-l', '127.0.0.1:${port}' },
-        }
+          command = "dlv",
+          args = { "dap", "-l", "127.0.0.1:${port}" },
+        },
       }
 
       -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
@@ -41,7 +43,8 @@ function M.setup(use)
         --   program = "./${relativeFileDirname}"
         -- }
       }
-    end } -- dap ui with dap adapter
+    end,
+  }) -- dap ui with dap adapter
 end
 
 return M

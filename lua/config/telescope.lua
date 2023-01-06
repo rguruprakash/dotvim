@@ -1,20 +1,22 @@
 local M = {}
 
 function M.setup(use)
-  use {
-    'nvim-telescope/telescope.nvim',
+  use({
+    "nvim-telescope/telescope.nvim",
     requires = {
-      'nvim-lua/plenary.nvim',
-      'AckslD/nvim-neoclip.lua',
-      { 'nvim-telescope/telescope-frecency.nvim', requires = 'kkharji/sqlite.lua' },
-      { 'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+      "nvim-lua/plenary.nvim",
+      "AckslD/nvim-neoclip.lua",
+      { "nvim-telescope/telescope-frecency.nvim", requires = "kkharji/sqlite.lua" },
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+      },
     },
     config = function()
-      local telescope = require('telescope')
+      local telescope = require("telescope")
       telescope.setup({
         defaults = {
-          layout_strategy = 'vertical',
+          layout_strategy = "vertical",
           mappings = {
             i = { ["<c-x>"] = require("trouble.providers.telescope").open_with_trouble },
             n = { ["<c-x>"] = require("trouble.providers.telescope").open_with_trouble },
@@ -25,7 +27,7 @@ function M.setup(use)
         },
         extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown {}
+            require("telescope.themes").get_dropdown({}),
           },
           ["frecency"] = {
             -- show_scores = true,
@@ -37,14 +39,14 @@ function M.setup(use)
             override_file_sorter = true, -- override the file sorter
             case_mode = "smart_case", -- or "ignore_case" or "respect_case". the default case_mode is "smart_case"
           },
-        }
+        },
       })
-      telescope.load_extension('neoclip')
+      telescope.load_extension("neoclip")
       telescope.load_extension("frecency")
-      telescope.load_extension('fzf')
-      telescope.load_extension('projects')
-    end
-  }
+      telescope.load_extension("fzf")
+      telescope.load_extension("projects")
+    end,
+  })
 end
 
 return M

@@ -1,7 +1,7 @@
-local M = {};
+local M = {}
 function M.setup(use)
-  use { 'ellisonleao/gruvbox.nvim' } -- theme
-  use { 'stevearc/dressing.nvim' } -- improves default vim.ui interfaces
+  use({ "ellisonleao/gruvbox.nvim" }) -- theme
+  use({ "stevearc/dressing.nvim" }) -- improves default vim.ui interfaces
   use({
     "folke/noice.nvim",
     requires = {
@@ -27,13 +27,12 @@ function M.setup(use)
         --   lsp_doc_border = false, -- add a border to hover docs and signature help
         -- },
       })
-    end
+    end,
   })
 end
 
 --/** GRUVBOX THEME SETUP **/--
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
-
 
 return M
