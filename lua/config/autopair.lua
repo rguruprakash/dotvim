@@ -1,10 +1,9 @@
 local M = {}
 
 function M.setup(use)
-  use 'windwp/nvim-autopairs' --autopair plugin
+  use { 'windwp/nvim-autopairs', config = function()
+    require('nvim-autopairs').setup {}
+  end }
 end
-
---/** AUTOPAIRS PLUGIN SETUP **/--
-require('nvim-autopairs').setup {}
 
 return M

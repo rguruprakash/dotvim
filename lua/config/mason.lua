@@ -1,9 +1,9 @@
 local M = {}
 
 function M.setup(use)
-  use { 'williamboman/mason.nvim' } -- Automate installation of LSP servers
+  use { 'williamboman/mason.nvim', config = function()
+    require("mason").setup()
+  end }
 end
-
-require("mason").setup()
 
 return M

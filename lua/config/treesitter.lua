@@ -3,12 +3,17 @@ local M = {}
 function M.setup(use)
   -- There are some issues with installing treesitter with packer. so using vim-plug to load the plugin
   -- see: https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
+  use { 'nvim-treesitter/nvim-treesitter-context',
+    config = function()
+      require 'treesitter-context'.setup {}
+    end
+  }
 end
 
 --/** TREE SITTER SETUP **/--
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "go", "lua", "typescript", "javascript", "python", "scala" },
+  ensure_installed = { "go", "lua", "typescript", "javascript", "python", "scala", "json", "http" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

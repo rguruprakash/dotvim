@@ -5,7 +5,12 @@ function M.setup(use)
     requires = {
       'nvim-telescope/telescope.nvim',
       'nvim-lua/plenary.nvim',
-    }
+    },
+    config = function()
+      require("cheatsheet").setup({
+        bundled_cheatsheets = false,
+      })
+    end
   }
 end
 

@@ -1,0 +1,5 @@
+Diff windows in a tab | :windo diffthis
+End Diff windows in a tab | :diffoff!
+Dapui toggle | :lua require'dapui'.toggle()
+spell check buffer | :setlocal spell spelllang=en_us
+spell suggest | z=
