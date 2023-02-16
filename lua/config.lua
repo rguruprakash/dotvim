@@ -48,6 +48,67 @@ require("packer").startup({
   },
 })
 
+vim.cmd[[
+syntax on
+
+set rnu
+set number
+set autoindent
+set smartindent
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set smarttab
+set nobackup
+set nowritebackup
+set clipboard=unnamed " share clipboard
+set autoread
+set cmdheight=2
+let mapleader=","
+set mouse=""
+set cursorline
+
+" --------------
+" --------------
+" PLUGINS CONFIG
+" --------------
+" --------------
+
+" Tabline
+" set showtabline=2
+
+" fugitive
+let g:github_enterprise_urls = ['https://github.bus.zalan.do']
+
+" Git gutter
+" nmap ghp <Plug>(GitGutterPreviewHunk)
+
+" My shortcuts
+nmap _ :NvimTreeToggle<cr>
+nmap z= :Telescope spell_suggest<cr>
+nmap <C-f> :Telescope live_grep<cr>
+nmap <C-p> :Telescope find_files<cr>
+nmap <C-l> :Telescope treesitter<cr>
+nmap <C-y> :Telescope neoclip<cr>
+nmap <leader>- :NvimTreeFindFile<cr>
+nmap <leader>f :Telescope filetypes<cr>
+nmap <leader>r :source ~/.vimrc<cr>
+nmap <leader>rl :luafile ~/.config/nvim/lua/config.lua<cr>
+nmap <leader>c :tabe ~/.vimrc<cr>
+nmap <leader>cl :tabe ~/.config/nvim/lua/config.lua<cr>
+nmap <leader>m :MindOpenMain<cr>
+nmap <leader>mc :MindClose<cr>
+nmap <leader>p :lua require'telescope'.extensions.projects.projects{}<cr>
+nmap <leader>w :WinResizerStartResize<cr>
+command D :DiffviewOpen
+command Dfh :DiffviewFileHistory
+comman  Dc :tabc
+" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+" set timeoutlen=500
+]]
+
 -- vim.opt.numberwidth = 3
 -- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s"
 
