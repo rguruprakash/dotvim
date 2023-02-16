@@ -11,12 +11,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'tpope/vim-surround'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'easymotion/vim-easymotion'
+" Plug 'liuchengxu/vim-which-key'
 " Plug 'rcarriga/nvim-notify'
 
 call plug#end()
 
 syntax on
-set background=dark
 
 set rnu
 set number
@@ -56,7 +56,7 @@ let g:github_enterprise_urls = ['https://github.bus.zalan.do']
 nmap _ :NvimTreeToggle<cr>
 nmap z= :Telescope spell_suggest<cr>
 nmap <C-f> :Telescope live_grep<cr>
-nmap <C-p> :Telescope frecency<cr>
+nmap <C-p> :Telescope find_files<cr>
 nmap <C-l> :Telescope treesitter<cr>
 nmap <C-y> :Telescope neoclip<cr>
 nmap <leader>- :NvimTreeFindFile<cr>
@@ -68,6 +68,12 @@ nmap <leader>cl :tabe ~/.config/nvim/lua/config.lua<cr>
 nmap <leader>m :MindOpenMain<cr>
 nmap <leader>mc :MindClose<cr>
 nmap <leader>p :lua require'telescope'.extensions.projects.projects{}<cr>
+nmap <leader>w :WinResizerStartResize<cr>
+command D :DiffviewOpen
+command Dfh :DiffviewFileHistory
+comman  Dc :tabc
+" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+" set timeoutlen=500
 
 lua << EOF
     require('config')

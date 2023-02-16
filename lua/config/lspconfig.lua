@@ -5,12 +5,12 @@ function M.setup(use)
     "neovim/nvim-lspconfig",
     config = function()
       local opts = { noremap = true, silent = true }
-      local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<space>e", builtin.diagnostics, opts)
+      vim.keymap.set("n", "<space>e", require("telescope.builtin").diagnostics, opts)
       vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
 
       local on_attach = function(client, bufnr)
         -- Enable completion triggered by <c-x><c-o>
+        local builtin = require("telescope.builtin")
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
         -- Mappings.
@@ -39,16 +39,16 @@ function M.setup(use)
         vim.keymap.set("n", "<space>f", function()
           vim.lsp.buf.format({ async = false })
         end, bufopts)
-        -- vim.keymap.set("v", "<space>f", function()
-        --   vim.lsp.buf.range_formatting({ async = true })
-        -- end, bufopts)
+        vim.keymap.set("v", "<space>f", function()
+          vim.lsp.buf.range_formatting({ async = true })
+        end, bufopts)
 
         if client.server_capabilities.documentHighlightProvider then
-          vim.cmd([[
-      hi! LspReferenceRead cterm=bold ctermbg=237 guibg=#45403d
-      hi! LspReferenceText cterm=bold ctermbg=237 guibg=#45403d
-      hi! LspReferenceWrite cterm=bold ctermbg=237 guibg=#45403d
-    ]]     )
+          -- vim.cmd([[
+          -- hi! LspReferenceRead cterm=bold ctermbg=237 guibg=#45403d
+          -- hi! LspReferenceText cterm=bold ctermbg=237 guibg=#45403d
+          -- hi! LspReferenceWrite cterm=bold ctermbg=237 guibg=#45403d
+          -- ]]     )
           vim.api.nvim_create_augroup("lsp_document_highlight", {
             clear = false,
           })
@@ -68,6 +68,7 @@ function M.setup(use)
           })
         end
       end
+
       -- Add additional capabilities supported by nvim-cmp
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("lspconfig")["tsserver"].setup({
@@ -107,6 +108,10 @@ function M.setup(use)
         capabilities = capabilities,
       })
       require("lspconfig").graphql.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+      require("lspconfig").bashls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
       })

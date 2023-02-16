@@ -1,6 +1,20 @@
 require("packer").startup({
   function(use)
     use("wbthomason/packer.nvim") -- Package manager
+    use("simeji/winresizer")
+    use({
+      "jackMort/ChatGPT.nvim",
+      config = function()
+        require("chatgpt").setup({
+          -- optional configuration
+        })
+      end,
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
+    })
 
     -- PRESERVE ORDER
     require("config.theme").setup(use)
@@ -34,6 +48,13 @@ require("packer").startup({
   },
 })
 
+-- vim.opt.numberwidth = 3
+-- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s"
+
+-- vim.cmd[[
+--   let &stc='%#NonText#%{&nu?v:lnum:""}%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}%#LineNr#%{&rnu&&!(v:lnum%2)?"\ ".v:relnum:""}'
+-- ]]
+--
 -- TODO:
 -- Setup DAP for Go lang
 -- Configure yamlls to validate k8s yaml
