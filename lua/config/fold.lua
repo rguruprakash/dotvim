@@ -45,7 +45,7 @@ function M.setup(use)
 				end,
 			})
 			vim.cmd([[
-        hi! UfoFoldedEllipsis guifg=#ffff00
+        hi! UfoFoldedEllipsis guifg=#ffff00 guibg=NONE
         hi! Folded guibg=NONE guifg=NONE
       ]])
 		end,

@@ -6,7 +6,7 @@ function M.setup(use)
 		"folke/noice.nvim",
 		requires = {
 			"MunifTanjim/nui.nvim",
-			-- "rcarriga/nvim-notify",
+			"rcarriga/nvim-notify",
 		},
 		config = function()
 			require("noice").setup({

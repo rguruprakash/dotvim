@@ -35,6 +35,13 @@ function M.setup(use)
 			require("gitsigns").setup()
 		end,
 	})
+	use({
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 end
 
 return M

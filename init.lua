@@ -29,7 +29,7 @@ let g:github_enterprise_urls = ['https://github.bus.zalan.do']
 nmap _ :NvimTreeToggle<cr>
 nmap z= :Telescope spell_suggest<cr>
 nmap <C-f> :lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>
-nmap <C-p> :Telescope find_files<cr>
+nmap <C-p> :lua require"config.telescope".project_files()<cr>
 nmap <C-l> :Telescope treesitter<cr>
 nmap <leader>- :NvimTreeFindFile!<cr>
 nmap <leader>f :Telescope filetypes<cr>
@@ -39,11 +39,10 @@ nmap <leader>p :lua require'telescope'.extensions.projects.projects{}<cr>
 nmap <leader>w :WinResizerStartResize<cr>
 nmap gsp :Gitsigns preview_hunk<cr>
 nmap gsr :Gitsigns reset_hunk<cr>
-command! D :DiffviewOpen
-command! Dfh :DiffviewFileHistory
-command! Dc :tabc
-" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-" set timeoutlen=500
+nmap <leader>lg :LazyGit<cr>
+"command! D :DiffviewOpen
+"command! Dfh :DiffviewFileHistory
+"command! Dc :tabc
 ]])
 
 require("packer").startup({
@@ -70,29 +69,13 @@ require("packer").startup({
 				})
 			end,
 		})
-		-- use {
-		--   'glepnir/dashboard-nvim',
-		--   event = 'VimEnter',
-		--   config = function()
-		--     require('dashboard').setup {
-		--       shortcut_type = "number",
-		--       hide = {
-		--         statusline = false,
-		--         tabline = false,
-		--         winbar = false
-		--       }
-		--     }
-		--   end,
-		--   requires = { 'nvim-tree/nvim-web-devicons' }
-		-- }
-		-- use {
-		--   'tzachar/local-highlight.nvim',
-		--   config = function()
-		--     require('local-highlight').setup({
-		--       file_types = { 'go' }
-		--     })
-		--   end
-		-- }
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		})
+		use({ "github/copilot.vim" })
 
 		-- PRESERVE ORDER
 		require("config.theme").setup(use)
@@ -115,7 +98,7 @@ require("packer").startup({
 		require("config.cheatsheet").setup(use)
 		require("config.lualine").setup(use)
 		require("config.mini").setup(use)
-		require("config.todo-comments").setup(use)
+		-- require("config.todo-comments").setup(use)
 
 		-- CUSOM FUCTIONS
 		require("config.notes-scratch")
@@ -126,13 +109,3 @@ require("packer").startup({
 		},
 	},
 })
-
--- vim.opt.numberwidth = 3
--- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s"
-
--- vim.cmd[[
---   let &stc='%#NonText#%{&nu?v:lnum:""}%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}%#LineNr#%{&rnu&&!(v:lnum%2)?"\ ".v:relnum:""}'
--- ]]
---
--- TODO:
--- Configure yamlls to validate k8s yaml
